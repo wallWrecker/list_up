@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List Up</title>
+    <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container hero">
+      <!-- Mini Nav bar -->
+      <div class="level">
+        <div class="level-left">
+          <h3 class="level-item subtitle has-text-centered is-text-info">
+            List Up
+          </h3>
+        </div>
+
+        <div class="level-right">
+          <a class="level-item" href="#">Register person</a>
+          <a class="level-item" href="#">about</a>
+        </div>
+      </div>
+    </div>
+      
+        <section class="section">
+          <label 
+            id="form-description" 
+            class="label">Add Transaction</label>
+          <!-- Form Fields -->
+          <div class="field has-addons">
+            <div class="control">
+              <input 
+                id="transaction-id"
+                class="input " 
+                type="text" 
+                placeholder="Transaction Id"
+                readonly="" />
+            </div>
+            <div class="control">
+              <input
+                id="name"
+                class="input "
+                type="text"
+                placeholder="Name"
+              />
+            </div>
+              <div class="control">
+                <input 
+                  id="promo"
+                  class="input " 
+                  type="text" 
+                  placeholder="Promo" />
+              </div>
+              <div class="control">
+                <button 
+                  class="button" 
+                  disabled="">
+                    <b>₱</b>
+                </button>
+              </div>
+              <div class="control">
+                <input 
+                  id="amount"
+                  class="input " 
+                  type="text" 
+                  placeholder="Amount" />
+              </div>
+              <div class="control">
+                <input
+                  id="date" 
+                  class="input " 
+                  type="text" 
+                  placeholder="Date"
+                  readonly="" />
+              </div>
+              <div class="control">
+                <input 
+                  id="status"
+                  class="input " 
+                  type="text" 
+                  placeholder="paid/unpaid" />
+              </div>
+              <div class="control">
+              <button class="button is-success is-expanded">Submit</button>
+            </div>
+            </div>
+          </section>
+
+      <!-- Table Section -->
+      <section class="section">
+          <table
+            id="table"
+            class="table is-striped is-fullwidth has-text-centered"
+          >
+            <thead id="thead">
+              <tr>
+                <!-- <th>No</th> -->
+                <th>Id</th>
+                <th>Name</th>
+                <th>Promo</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </section>
+    
+
+    <script type="module" src="/js/index.js"></script>
+  </body>
+</html>
