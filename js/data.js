@@ -1,53 +1,29 @@
-let accounts = {
-  employees: [
-    {
-      id: 230,
-      name: "Elizabeth",
-      gender: "Female",
-      status: "Active",
-    },
+let transactions = 
+[
+  {
+    "id": 1,
+    "name": "Christian Paul",
+    "promo": "TM50X",
+    "amount": 50,
+    "date": "13/08/2020",
+    "status": "paid"
+  },
+  {
+    id: 2,
+    name:"Girlie",
+    promo:"TM50X",
+    amount:50,
+    date:"14/08/2020",
+    status:"unpaid",
+  },
+  {
+    id: 3,
+    name:"Maria",
+    promo:"G100X",
+    amount:100,
+    date:"15/08/2020",
+    status:"paid",
+  }
+]
 
-    {
-      id: 110,
-      name: "John",
-      gender: "Male",
-      status: "In-active",
-    },
-
-    {
-      id: 100,
-      name: "Grace",
-      gender: "Female",
-      status: "In-active",
-    },
-
-    {
-      id: 101,
-      name: "Floyd",
-      gender: "Male",
-      status: "Active",
-    },
-  ],
-  students: [
-    {
-      id: 201400239,
-      name: "Maya",
-      gender: "Female",
-      status: "Inactive",
-    },
-    {
-      id: 201400230,
-      name: "Resse",
-      gender: "Female",
-      status: "Active",
-    },
-    {
-      id: 201400200,
-      name: "Floyd",
-      gender: "Male",
-      status: "Active",
-    },
-  ],
-};
-
-export { accounts };
+export { transactions };

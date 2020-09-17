@@ -1,28 +1,33 @@
-import { accounts } from "./data.js";
+/*ALL DATA FUNCTIONS, like: finding certain records. ARE GONNA LIVE IN THIS FILE*/
+import { transactions } from "./data.js";
 
-function displayAllActive() {
-  let { employees } = accounts;
-  employees.forEach((ele) => {
-    let thead = document.getElementById("thead");
-    let table_row = document.createElement("tr");
-    if (ele.status == "In-active") {
-      for (let item in ele) {
-        let table_column = document.createElement("td");
-        table_column.innerHTML = ele[item];
-        table_row.ondblclick = function () {
-          logitObj(this);
-        };
-        table_row.appendChild(table_column);
-      }
+// Displays all data.
+
+// Funcition that displays 'active only' transaction.
+let data = transactions;
+
+console.log(data);
+
+function find_unpaid() {
+  let result = data.filter((ele) => ele.status == "paid");
+  return result;
+}
+function find_id(id) {
+  let data = transactions.reverse();
+  return data.find((ele) => ele.id == id);
+}
+
+function update_transaction(id, status) {
+  data.forEach((ele) => {
+    if( ele['id'] == 1) {
+      console.log("Got it! " + ele['id'] +
+        " " + ele['name']);
     } else {
-      return;
+      return
     }
-    thead.after(table_row);
+
   });
 }
 
-function logitObj(element) {
-  let id = element.firstChild.innerHTML;
-}
-
-export { displayAllActive as display_active };
+// Export
+export {find_unpaid, find_id, update_transaction };

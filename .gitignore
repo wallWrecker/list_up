@@ -1,2 +1,5 @@
+.gitignore
+node_modules
 sample.html
 /unrelated_scripts/my_script.js
+sample.txt

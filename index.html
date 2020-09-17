@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div class="container hero">
+    <div class="container full-page">
       <!-- Mini Nav bar -->
-      <div class="level">
+      <div class="level has-background-light px-3 py-3">
         <div class="level-left">
           <h3 class="level-item subtitle has-text-centered is-text-info">
             List Up
@@ -22,94 +22,95 @@
           <a class="level-item" href="#">about</a>
         </div>
       </div>
-    </div>
-      
-        <section class="section">
-          <label 
-            id="form-description" 
-            class="label">Add Transaction</label>
-          <!-- Form Fields -->
-          <div class="field has-addons">
-            <div class="control">
-              <input 
-                id="transaction-id"
-                class="input " 
-                type="text" 
-                placeholder="Transaction Id"
-                readonly="" />
-            </div>
-            <div class="control">
-              <input
-                id="name"
-                class="input "
-                type="text"
-                placeholder="Name"
-              />
-            </div>
-              <div class="control">
-                <input 
-                  id="promo"
-                  class="input " 
-                  type="text" 
-                  placeholder="Promo" />
-              </div>
-              <div class="control">
-                <button 
-                  class="button" 
-                  disabled="">
-                    <b>₱</b>
-                </button>
-              </div>
-              <div class="control">
-                <input 
-                  id="amount"
-                  class="input " 
-                  type="text" 
-                  placeholder="Amount" />
-              </div>
-              <div class="control">
-                <input
-                  id="date" 
-                  class="input " 
-                  type="text" 
-                  placeholder="Date"
-                  readonly="" />
-              </div>
-              <div class="control">
-                <input 
-                  id="status"
-                  class="input " 
-                  type="text" 
-                  placeholder="paid/unpaid" />
-              </div>
-              <div class="control">
-              <button class="button is-success is-expanded">Submit</button>
-            </div>
-            </div>
-          </section>
 
-      <!-- Table Section -->
-      <section class="section">
-          <table
-            id="table"
-            class="table is-striped is-fullwidth has-text-centered"
-          >
-            <thead id="thead">
-              <tr>
-                <!-- <th>No</th> -->
-                <th>Id</th>
-                <th>Name</th>
-                <th>Promo</th>
-                <th>Amount</th>
-                <th>Date</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-          </table>
+  
+      <section class="section container px-2 py-2">
+        <label id="form-description" class="label">Add Transaction</label>
+        <!-- Form Fields -->
+        <div class="field has-addons">
+          <div class="control">
+            <input
+              id="transaction-id"
+              class="input is-link is-rounded"
+              type="text"
+              placeholder="Transaction Id"
+              readonly
+            />
+          </div>
+          <div class="control">
+            <input
+              id="name"
+              class="input is-link is-rounded"
+              type="text"
+              placeholder="Name"
+            />
+          </div>
+          <div class="control">
+            <input
+              id="promo"
+              class="input is-link is-rounded"
+              type="text"
+              placeholder="Promo"
+            />
+          </div>
+          <div class="control">
+            <button class="button" disabled="">
+              <b>₱</b>
+            </button>
+          </div>
+          <div class="control">
+            <input
+              id="amount"
+              class="input is-link is-rounded"
+              type="text"
+              placeholder="Amount"
+            />
+          </div>
+          <div class="control">
+            <input
+              id="date"
+              class="input is-link is-rounded"
+              type="data"
+              placeholder="Date"
+              readonly=""
+            />
+          </div>
+          <div class="control">
+            <input
+              id="status"
+              class="input is-link is-rounded"
+              type="text"
+              placeholder="paid/unpaid"
+            />
+          </div>
+          <div class="control">
+            <button id="button" class="button is-link is-rounded is-expanded">
+              Submit
+            </button>
+          </div>
         </div>
       </section>
-    
 
+      <!-- Table Section -->
+      <section class="container">
+        <table
+          id="table"
+          class="table is-striped is-fullwidth has-text-centered has-background-light"
+        >
+          <thead id="thead">
+            <tr>
+              <!-- <th>No</th> -->
+              <th>Transaction Id</th>
+              <th>Name</th>
+              <th>Promo</th>
+              <th>Amount</th>
+              <th>Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+        </table>
+      </section>
+    </div>
     <script type="module" src="/js/index.js"></script>
   </body>
 </html>
