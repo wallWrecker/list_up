@@ -1,5 +1,5 @@
 .gitignore
 node_modules
 sample.html
-/unrelated_scripts/my_script.js
+/unrelated_scripts
 sample.txt
