@@ -1,17 +1,16 @@
 /*ALL DATA FUNCTIONS, like: finding certain records. ARE GONNA LIVE IN THIS FILE*/
 import { transactions } from "./data.js";
-
-// Displays all data.
+import { inputs_container } from "./user_interaction.js";
 
 // Funcition that displays 'active only' transaction.
 let data = transactions;
 
-function return_unpaid() {
+function return_all_unpaid() {
   let result = data.filter((ele) => ele.status == "unpaid");
   return result;
 }
 
-function find_paid() {
+function return_all_paid() {
   let result = data.filter((ele) => ele.status == "paid");
   return result;
 }
@@ -30,6 +29,7 @@ function update_transaction(id, status) {
     }
   });
 }
+function add_transaction(data, yourObject) {}
 
-// Export
-export { return_unpaid, find_id, update_transaction };
+// Export functionalities
+export { return_all_unpaid, return_all_paid, find_id, update_transaction };

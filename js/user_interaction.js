@@ -1,4 +1,9 @@
-import { find_id } from "./data_functions.js";
+import { transactions } from "./data.js";
+import {
+  return_all_unpaid,
+  return_all_paid,
+  find_id,
+} from "./data_functions.js";
 
 // Declaring Form inputs in ID..
 let transaction_text_box = document.getElementById("transaction-id");
@@ -34,9 +39,7 @@ for (let ele of mini_button_filters) {
   };
 }
 
-function display_all(data) {
-  // activate_button_filter();
-
+function display_all(data = transactions) {
   // I could display the all records
   data.forEach((ele) => {
     let thead = document.getElementById("thead");
@@ -49,6 +52,7 @@ function display_all(data) {
       table_row.ondblclick = function () {
         edit_transaction(this);
       };
+      table_row.id = "tr";
       table_row.appendChild(table_column);
     }
     thead.after(table_row);
@@ -87,19 +91,56 @@ function activate_button_filter(element) {
   const type_of_record = element.innerText.toLowerCase();
   switch (type_of_record) {
     case "all unpaid":
-      console.log("i got, " + type_of_record);
+      mini_button_filters[0].classList.remove("is-link");
+      mini_button_filters[1].classList.remove("is-link");
+
+      element.classList.add("is-link");
+
+      for (let elem of document.querySelectorAll("#tr")) {
+        elem.remove();
+      }
+
+      display_all(return_all_unpaid());
+
       break;
 
     case "all paid":
-      console.log("i got, " + type_of_record);
+      mini_button_filters[0].classList.remove("is-link");
+      mini_button_filters[2].classList.remove("is-link");
+      element.classList.add("is-link");
+      for (let elem of document.querySelectorAll("#tr")) {
+        elem.remove();
+      }
+      display_all(return_all_paid());
       break;
 
     default:
-      console.log("i got, " + type_of_record);
+      mini_button_filters[1].classList.remove("is-link");
+      mini_button_filters[2].classList.remove("is-link");
+      for (let elem of document.querySelectorAll("#tr")) {
+        elem.remove();
+      }
+      element.classList.add("is-link");
+      display_all();
       break;
   }
 }
+function add_transaction(parsedObject, inputs = inputs_container) {
+  let counter = 0;
+  let myObj = {
+    id: "",
+    name: "",
+    promo: "",
+    amount: "",
+    date: "",
+    status: "",
+  };
 
+  for (let prop in myObj) {
+    myObj[prop] = inputs[counter].value;
+  }
+  parsedObject.push(myObj);
+}
 export {
   inputs_container,
   display_unpaid,

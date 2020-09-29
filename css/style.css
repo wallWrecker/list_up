@@ -1,5 +1,5 @@
 body {
-  background: #dfe1ed;
+  background: #fafafa;
   height: 100vh;
 }
 .full-page {
@@ -14,7 +14,6 @@ body {
 }
 
 .custom-radius {
-  
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
 }
